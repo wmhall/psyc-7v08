@@ -1,0 +1,285 @@
+---
+title: 'Lab 1: Getting started with R'
+author: "Will Hall"
+date: "29/12/2020"
+output:
+  github_document:
+    toc: true
+    toc_depth: 2
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Let's get started!
+
+Launch RStudio/R.
+
+Notice the default panes:
+
+* Console (entire left)
+* Environment/History (tabbed in upper right)
+* Files/Plots/Packages/Help (tabbed in lower right)
+
+FYI: you can change the default location of the panes, among many other things: [Customizing RStudio](https://support.rstudio.com/hc/en-us/articles/200549016-Customizing-RStudio).
+
+## Loving Projects
+
+Keeping all the files associated with a project organized together -- input data, R scripts, analytical results, figures -- is such a wise and common practice that RStudio has built-in support for this via its [projects](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects).
+
+Let's make one to use for the rest of this class. Note if you've already made a project for this class, you don't need to make another one. To make a project: *File > New Project...*. The directory name you choose here will be the project name. Call it whatever you want.
+
+This workflow will serve you well in the future:
+
+* Create an RStudio project for an analytical project
+* Keep inputs there (we'll soon talk about importing)
+* Keep scripts there; edit them, run them in bits or as a whole from there
+* Keep outputs there (like the PDFs and figures)
+
+Avoid using the mouse for pieces of your analytical workflow, such as loading a dataset or saving a figure. Terribly important for reproducibility and for making it possible to retrospectively determine how a numerical table or PDF was actually produced (searching on local disk on filename, among `.R` files, will lead to the relevant script).
+
+
+## Writing a script
+
+Next, open a new R script and develop and run your code from there. In RStudio, use *File > New File > R Script*. Save this script with a name ending in `.r` or `.R`, containing no spaces or other funny stuff, and that evokes whatever it is we're doing today. __Example:__ `lab-01-getting-started.r`.
+
+
+# Get the Gapminder data
+
+We will work with some of the data from the [Gapminder project](https://www.gapminder.org/). If you haven't already done so, go ahead and install it from CRAN like so:
+
+```{r eval = FALSE}
+install.packages("gapminder")
+```
+
+Now load the package:
+
+```{r}
+library(gapminder)
+```
+
+
+# Data frames are awesome
+
+Whenever you have rectangular, spreadsheet-y data, your default data receptacle in R is a data frame. Do not depart from this without good reason. Data frames are awesome because...
+
+* Data frames package related variables neatly together,
+  - keeping them in sync vis-a-vis row order
+  - applying any filtering of observations uniformly
+* Most functions for inference, modeling, and graphing are happy to be passed a data frame via a `data =` argument. This has been true in base R for a long time.
+* The set of packages known as the [tidyverse](https://www.tidyverse.org/) takes this one step further and explicitly prioritizes the processing of data frames. This includes popular packages like dplyr and ggplot2. In fact the tidyverse prioritizes a special flavor of data frame, called a "tibble".
+
+Data frames -- unlike general arrays or, specifically, matrices in R -- can hold variables of different flavors, such as character data (e.g., subject ID or name), quantitative data (e.g., reaction times), and categorical information (e.g., experimental vs. control). 
+
+## Meet the `gapminder` data frame or "tibble"
+
+By loading the gapminder package, we now have access to a data frame by the same name. Get an overview of this with `str()`, which displays the structure of an object.
+
+```{r message = FALSE, warning = FALSE}
+str(gapminder)
+```
+
+`str()` will provide a sensible description of almost anything and, worst case, nothing bad can actually happen. When in doubt, just `str()` some of the recently created objects to get some ideas about what to do next.
+
+We could also print the `gapminder` object itself to screen. However, if you've used R before, you might be reluctant to do this, because large datasets just fill up your Console and provide very little insight.
+
+Try printing the gapminder object to screen. What happens? 
+
+```{r}
+gapminder
+```
+
+The reason your data frame doesn't fill up the whole screen is because the `gapminder` package uses a special type of data frame from the tidyverse package. 
+
+The [tidyverse](https://www.tidyverse.org/) offers a special case of R's default data frame: the "tibble", which is a nod to the actual class of these objects, `tbl_df`.
+
+```{r}
+## see? it's still a regular data frame, but also a tibble
+class(gapminder)
+```
+
+This means you can boldly boldly print `gapminder` to screen! It is a tibble (and also a regular data frame) and the tidyverse provides a nice print method that shows the most important stuff and doesn't fill up your Console.
+
+For a comparison, base R comes with a data frame called `iris`. Type `iris` in the console and behold the ugliness of how it prints to the screen. 
+
+```{r, eval=FALSE}
+iris
+```
+
+The iris data frame is only a data frame.
+
+```{r}
+class(iris)
+```
+
+
+If you are dealing with plain vanilla data frames, you can rein in data frame printing explicitly with `head()` and `tail()`. Read the help pages to learn how to use the `head` and `tail` functions. 
+
+```{r}
+head(iris)
+tail(iris)
+```
+
+More ways to query basic info on a data frame:
+
+```{r}
+names(gapminder)
+ncol(gapminder)
+length(gapminder)
+dim(gapminder)
+nrow(gapminder)
+```
+
+A statistical overview can be obtained with `summary()`:
+
+```{r}
+summary(gapminder)
+```
+
+Although we haven't begun our formal coverage of visualization yet, it's so important for getting to know a dataset that we will make a few figures anyway. Here we use only base R graphics, which are very basic.
+
+```{r first-plots-base-R}
+plot(lifeExp ~ year, gapminder)
+plot(lifeExp ~ gdpPercap, gapminder)
+plot(lifeExp ~ log(gdpPercap), gapminder)
+```
+
+
+## Look at the variables inside a data frame
+
+To specify a single variable from a data frame, use the dollar sign `$`. Let's explore the numeric variable for life expectancy.
+
+```{r histogram-lifeExp}
+head(gapminder$lifeExp)
+summary(gapminder$lifeExp)
+hist(gapminder$lifeExp)
+```
+
+The year variable is an integer variable, but since there are so few unique values it also functions a bit like a categorical variable.
+
+
+```{r}
+summary(gapminder$year)
+table(gapminder$year)
+```
+
+The variables for country and continent hold truly categorical information, which is stored as a *factor* in R.
+
+```{r}
+class(gapminder$continent)
+summary(gapminder$continent)
+levels(gapminder$continent)
+nlevels(gapminder$continent)
+```
+
+The __levels__ of the factor `continent` are "Africa", "Americas", etc. and this is what's usually presented to your eyeballs by R. In general, the levels are friendly human-readable character strings, like "control/experimental". But *never ever ever* forget that, under the hood, R is really storing integer codes 1, 2, 3, etc. Look at the result from `str(gapminder$continent)` if you are skeptical.
+
+```{r}
+str(gapminder$continent)
+```
+
+Factors can be rich with booby traps for the unsuspecting but they are a necessary evil. We will learn how to work with them later in the course -- in fact we'll spend a whole lecture on factors. The pros far outweigh the cons. Specifically in modeling and figure-making, factors are anticipated and accommodated by the functions and packages you will want to use.
+
+Here we count how many observations are associated with each continent and, as usual, try to portray that info visually. This makes it much easier to quickly see that African countries are well represented in this dataset.
+
+```{r tabulate-continent}
+table(gapminder$continent)
+barplot(table(gapminder$continent))
+```
+
+You can also refer to variables in data frame by column number. Don't do this. It makes for code that is difficult to read. Also, if the variable changes location in your data frame you'll end up referring to the wrong variable. 
+
+If you want to specify a variable by column number, you use  double square brackets `[[]]`. The code below prints the first 10 entries of the fourth variable (lifeExp) in the gapminder data frame. 
+
+```{r}
+head(gapminder[[4]])
+
+```
+
+
+
+# Good practices
+
+## Comment your code!
+
+Comments start with one or more `#` symbols. Use them. RStudio helps you (de)comment selected lines with Ctrl+Shift+C (Windows and Linux) or Command+Shift+C (Mac).
+
+```{r}
+#remember to comment your code!
+```
+
+## Restarting R!
+
+Now practice restarting R. In RStudio, use *Session > Restart R*. 
+
+Why do we do this? So that the code you write is complete and re-runnable. If you return to a clean slate often, you will root out hidden dependencies where one snippet of code only works because it relies on objects created by code saved elsewhere or, much worse, never saved at all. Similarly, an aggressive clean slate approach will expose any usage of packages that have not been explicitly loaded. 
+
+Restart R and re-run your code. 
+
+## Use shortcuts!
+
+I introduced you to a number of keyboard shortcuts for sending code to the console. Practice using them!
+
+Send this code to the console using a shortcut.
+
+```{r}
+x <- 3 * 4
+x
+```
+
+R Studio offers many handy [keyboard shortcuts](https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts). Also, Alt+Shift+K brings up a keyboard shortcut reference card. Take a look at these and see what shortcuts you might want to introduce into your workflow. 
+
+
+Test out tab-completion. Make the assignment below.
+
+```{r}
+this_is_a_really_long_name <- 2.5
+```
+
+Then type the first few characters, press TAB, add characters until you disambiguate, then press return.
+
+# But I want to do more!
+
+Check out [swirl](http://swirlstats.com). Swirl turns the R console into an interactive learning environment. 
+
+Swirl is a little like a text-based RPG, except it's more fun because it teaches you R!
+
+```{r, echo=FALSE, out.width="50%", fig.cap="Note: This is not Swirl, but yes, you can mix gifs and R code! Tune in next week to find out more."}
+knitr::include_graphics("https://oleherman.com/mrpg/gui_1.gif")
+```
+
+Work through one or more interactive tutorials that are part of the swirl package.
+
+You'll need to install the Swirl package, but you know how do that!
+
+```{r eval = FALSE}
+#in case you forgot how to install a package
+install.packages("swirl")
+
+#load swirl
+library(swirl)
+
+#start working through the interactive tutorials
+swirl()
+```
+
+# Summary
+
+* Use Rstudio Projects!!!
+
+* Use data frames!!!
+
+* Use the [tidyverse](https://www.tidyverse.org/)!!! This will provide a special type of data frame called a "tibble" that has nice default printing behavior, among other benefits.
+
+* When in doubt, `str()` something or print something.
+
+* Always understand the basic extent of your data frames: number of rows and columns.
+
+* Understand what flavor the variables are.
+
+* Learn how to use factors!!! I wouldn't give too much thought to factors at this stage of the course, but later we'll take a deep dive into working with factors. 
+
+* Do basic statistical and visual sanity checking of each variable.
+
+* Refer to variables by name, e.g., `gapminder$lifeExp`, not by column number. Your code will be more robust and readable.
