@@ -1,7 +1,5 @@
 Lab 1: Getting started with R
 ================
-Will Hall
-29/12/2020
 
 -   [Let’s get started!](#lets-get-started)
     -   [Loving Projects](#loving-projects)

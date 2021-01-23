@@ -1,7 +1,5 @@
 ---
 title: 'Lab 1: Getting started with R'
-author: "Will Hall"
-date: "29/12/2020"
 output:
   github_document:
     toc: true

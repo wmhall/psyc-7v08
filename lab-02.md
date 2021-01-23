@@ -1,6 +1,5 @@
 Lab 02
 ================
-20/01/2021
 
 -   [Overview](#overview)
 -   [Making your first R Markdown

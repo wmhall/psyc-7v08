@@ -1,6 +1,5 @@
 General homework rubric
 ================
-19/01/2021
 
 *Also consult any specific guidance given in the relevant homework
 itself. Not all of these topics will apply to every homework.*
