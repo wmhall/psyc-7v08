@@ -1,7 +1,7 @@
 ---
 title: General Homework Guidelines
 output:
-  html_document:
+  gfm:
     toc: true
     toc_depth: 4
 ---
