@@ -134,7 +134,7 @@ you debug your code and will avoid things breaking when you are ready to
 if you want to tolerate errors in one specific chunk, you can do that.**
 You set this for a specific code chunk like so:
 
-    ```{r wing-and-a-prayer, error = TRUE}  
+    ```r
     ## your sketchy code goes here ;) 
     ```
 

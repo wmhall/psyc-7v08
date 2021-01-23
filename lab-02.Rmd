@@ -85,7 +85,7 @@ __If you are writing R code chunks in your R Markdown docuemnt, check those code
 
 __Your document won't knit if you have errors in your R code. However, if you want to  tolerate errors in one specific chunk, you can do that.__  You set  this for a specific code chunk like so:
 
-    ```{r wing-and-a-prayer, error = TRUE}  
+    ```{r wing-and-a-prayer, error = TRUE}  
     ## your sketchy code goes here ;) 
     ```
 This lets you see what your document looks like without worrying about errors in your R code. 
