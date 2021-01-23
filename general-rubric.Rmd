@@ -1,0 +1,26 @@
+---
+title: "General homework rubric"
+date: "19/01/2021"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(here)
+
+#reading in rubric table
+
+rubric_table <- 
+read_csv(here("working/homework/hw00/rubric-table.csv"))
+```
+
+
+*Also consult any specific guidance given in the relevant homework itself. Not all of these topics will apply to every homework.*
+
+*You can also use this rubric as a rough guide for doing the peer reviews.*
+
+```{r, echo = FALSE}
+knitr::kable(rubric_table)
+```
+
