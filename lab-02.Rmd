@@ -71,7 +71,7 @@ You'll develop your own mojo soon, but this should give you your first successfu
 
 Use R Markdown to create a bio page that introduces yourself to the class. Add a picture (or gif or two) and link to your labs' website. 
 
-In your page you should try and experiment with 4 or more aspects of the Markdown syntax. Examples: section headers, links, bold, italic, bullet points, images, gifs, emojis `r emo::ji("sunglasses")`, etc. Experiment and have some fun. Remember to document your process so you can come back to this file later and use it as a resource.
+In your page you should try and experiment with 4 or more aspects of the Markdown syntax. Examples: section headers, links, bold, italic, bullet points, images, gifs, emojis `r emo::ji("sunglasses")` , etc. Experiment and have some fun. Remember to document your process so you can come back to this file later and use it as a resource.
 
 I'll ask a few of you to share your work at the end of the lab session. 
 

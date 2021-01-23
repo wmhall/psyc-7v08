@@ -112,7 +112,7 @@ class. Add a picture (or gif or two) and link to your labs’ website.
 
 In your page you should try and experiment with 4 or more aspects of the
 Markdown syntax. Examples: section headers, links, bold, italic, bullet
-points, images, gifs, emojis 😎, etc. Experiment and have some fun.
+points, images, gifs, emojis 😎 , etc. Experiment and have some fun.
 Remember to document your process so you can come back to this file
 later and use it as a resource.
 
