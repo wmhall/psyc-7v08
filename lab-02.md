@@ -1,4 +1,4 @@
-Lab 02
+Lab 02: R Markdown
 ================
 
 -   [Overview](#overview)
