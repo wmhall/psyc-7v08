@@ -7,12 +7,15 @@ This repo contains the labs and homework for PSYC-7V08.
 ## Labs
 
 [Lab 1](posted/labs/lab-01/lab-01-getting-started.md)
+
 [Lab 2](lab-02.md)
 
 ## Homework
 
 [Homework guidelines](hw00_homework-guidelines.md)
+
 [General rubric](general-rubric.md)
+
 [Homework 1]()
 
 ## License
