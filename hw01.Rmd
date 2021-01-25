@@ -1,0 +1,83 @@
+---
+title: 'Homework 01'
+output: 
+  github_document:
+    toc: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Overview
+
+In this homework you are going to explore the `gapminder` data. You will learn to establish workflows based on `data.frame`. You will also learn how to author a dynamic report in R Markdown.
+
+Remember the [sampler concept](http://en.wikipedia.org/wiki/Sampler_(needlework)). Your homework should serve as your own personal cheatsheet in the future for things to do with a new dataset. Give yourself the cheatsheet you deserve!
+
+#### Bring rectangular data in
+
+Work with the `gapminder` data we explored in class. 
+
+Start by loading the `gapminder` package.
+
+```{r, eval= FALSE}
+library(gapminder)
+
+```
+
+#### Get to know your the data
+
+Explore the `gapminder` object:
+
+  * Is it a data.frame, a matrix, a vector, a list, or something else?
+  * What's its mode, class? There are functions to help you figure this out. 
+  * How many variables/columns?
+  * How many rows/observations?
+  * Can you get these facts about "extent" or "size" in more than one way? Can you imagine different functions being useful in different contexts?
+  * What flavor is each variable?
+  
+#### Explore individual variables
+
+Pick __at least__ one categorical variable and at least one quantitative variable to explore.
+
+  * Characterize what's possible, i.e. all possible values or max vs. min ... whatever's appropriate.
+  * What's typical? What's the spread? What's the distribution? Etc., tailored to the variable at hand.
+  * Feel free to use summary stats, tables, figures. We're NOT expecting high production value (yet).
+  
+To answer these questions, you might have to do some detective work and learn a few new functions.
+  
+#### But I want to do more!
+
+*This is just for people who want to take things further! NOT REQUIRED!*
+
+##### Explore various plot types
+
+Explore base R plots [The Base Plotting System in R](https://bookdown.org/rdpeng/exdata/the-base-plotting-system-1.html)
+
+In this course, we will be using `ggplot2` for data visualization. If you want to get a head start on that material, see the [`ggplot2` chapter from r4ds](https://r4ds.had.co.nz/data-visualisation.html) for ideas, and add a few plots to your homework. 
+
+
+##### Do more statistical summarization
+
+Do more statistical summarization and visual exploration. For example, start to look at the relationships between variables.
+
+Read [What I do when I get a new data set as told through tweets](http://simplystatistics.org/2014/06/13/what-i-do-when-i-get-a-new-data-set-as-told-through-tweets/) from [SimplyStatistics](http://simplystatistics.org) to get some ideas!
+  
+### Report your process
+
+You're encouraged to reflect on what was hard/easy, problems you solved, helpful tutorials you read, etc.
+
+### Submit the assignment
+
+Follow instructions on [How to submit homework](general-rubric.md).
+
+### Rubric
+
+Our [general rubric](general-rubric.md) applies, but also ...
+
+Check minus: Hits the elements listed above in a really minimal or rote way, maybe even with a few mistakes/omissions. And/or it's hard to figure out which file we are even supposed to be looking at.
+
+Check: Hits all the elements. No obvious mistakes. Pleasant to read. No heroic detective work required. Solid.
+
+Check plus: Some "above and beyond", creativity, etc. We learned something new from reviewing your work and we're eager to incorporate it into our work now.
