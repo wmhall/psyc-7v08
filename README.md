@@ -16,7 +16,7 @@ This repo contains the labs and homework for PSYC-7V08.
 
 [General rubric](general-rubric.md)
 
-[Homework 1]()
+[Homework 1](hw01.md)
 
 ## License
 
