@@ -10,6 +10,8 @@ This repo contains the labs and homework for PSYC-7V08.
 
 [Lab 2](lab-02.md)
 
+[Lab 3](lab-03.md)
+
 ## Homework
 
 [Homework guidelines](hw00_homework-guidelines.md)
