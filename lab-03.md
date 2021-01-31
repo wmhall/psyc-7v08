@@ -692,5 +692,4 @@ the functions below to move things to the next level:
 -   An excellent Rstudio conf (2017)
     [talk](https://rstudio.com/resources/rstudioconf-2017/writing-readable-code-with-pipes/)
     on Writing Readable Code with Pipes
--   [r4ds](https://rstudio.com/resources/rstudioconf-2017/writing-readable-code-with-pipes/)
-    chapter on pipes.
+-   [r4ds](https://r4ds.had.co.nz/pipes.html) chapter on pipes.
