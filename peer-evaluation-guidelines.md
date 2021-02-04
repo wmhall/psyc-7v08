@@ -8,7 +8,7 @@ Your peer review will be shared with the person you were assigned.
 
   * Give thoughtful, constructive and considerate comments. 
   * Be specific and concise.
-  * Use [general homeowork rubric](general-rubric.md) to for ideas about criteria to evaluate and comment on
+  * Use [general homework rubric](general-rubric.md) to for ideas about criteria to evaluate and comment on
   * Try to learn something new and, if you succeed, point that out.
   * If you can't find anything to praise or that you found helpful, then at least offer some suggestions in a kind way.
 
