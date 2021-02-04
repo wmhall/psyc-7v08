@@ -20,6 +20,10 @@ This repo contains the labs and homework for PSYC-7V08.
 
 [Homework 1](hw01.md)
 
+## Peer review
+
+[Peer review guidelines](peer-evaluation-guidelines.md)
+
 ## License
 
 This work is licensed under a [Creative Commons Attribution-NonCommercial 4.0 International License](http://creativecommons.org/licenses/by-nc/4.0/).
