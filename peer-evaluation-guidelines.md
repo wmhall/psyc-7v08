@@ -19,8 +19,6 @@ Your peer review will be shared with the person you were assigned.
     * 1 = needs more
     * 2 = great  
 
-* These points will be totaled over all assignments to form your peer review mark.
-
 * Hallmarks of the “not constructive/mean” feedback:
     * Your review is mean
     * There is no evidence that you tried to engage with the person's code.
