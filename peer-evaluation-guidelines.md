@@ -32,7 +32,7 @@ Your peer review will be shared with the person you were assigned.
 
 For each peer review submission, create an R project (e.g., `peer-review-hw01.Rproj`). 
 
-Use R Markdown to write your peer reviews. Using R Markdown will allow you to easily reference code snippets.E.g., 
+Use R Markdown to write your peer reviews. Using R Markdown will allow you to easily reference code snippets. E.g., 
 
 > It was awesome when you did this. It helped me learn about X.
 
