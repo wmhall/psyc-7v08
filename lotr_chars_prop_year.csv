@@ -1,0 +1,110 @@
+film,century,year,character,character_words,film_words
+The Fellowship Of The Ring,20,01,Aragorn,920,11192
+The Fellowship Of The Ring,20,01,Arwen,235,11192
+The Fellowship Of The Ring,20,01,Bilbo,1310,11192
+The Fellowship Of The Ring,20,01,Boromir,943,11192
+The Fellowship Of The Ring,20,01,Celeborn,160,11192
+The Fellowship Of The Ring,20,01,Elrond,557,11192
+The Fellowship Of The Ring,20,01,Farmer Maggot,21,11192
+The Fellowship Of The Ring,20,01,Frodo,967,11192
+The Fellowship Of The Ring,20,01,Gaffer,21,11192
+The Fellowship Of The Ring,20,01,Galadriel,994,11192
+The Fellowship Of The Ring,20,01,Gandalf,2360,11192
+The Fellowship Of The Ring,20,01,Gatekeeper,38,11192
+The Fellowship Of The Ring,20,01,Gimli,431,11192
+The Fellowship Of The Ring,20,01,Haldir,70,11192
+The Fellowship Of The Ring,20,01,Hobbit Kids,10,11192
+The Fellowship Of The Ring,20,01,Hobbits,88,11192
+The Fellowship Of The Ring,20,01,Innkeeper,76,11192
+The Fellowship Of The Ring,20,01,Isildur,1,11192
+The Fellowship Of The Ring,20,01,Legolas,184,11192
+The Fellowship Of The Ring,20,01,Lobelia Sackville-Baggins,9,11192
+The Fellowship Of The Ring,20,01,Lurtz,7,11192
+The Fellowship Of The Ring,20,01,Man,17,11192
+The Fellowship Of The Ring,20,01,Merry,323,11192
+The Fellowship Of The Ring,20,01,Mrs. Bracegirdle,2,11192
+The Fellowship Of The Ring,20,01,Orc,20,11192
+The Fellowship Of The Ring,20,01,Pippin,274,11192
+The Fellowship Of The Ring,20,01,Proudfoot,1,11192
+The Fellowship Of The Ring,20,01,Rosie,3,11192
+The Fellowship Of The Ring,20,01,Sam,557,11192
+The Fellowship Of The Ring,20,01,Sandyman,17,11192
+The Fellowship Of The Ring,20,01,Saruman,480,11192
+The Fellowship Of The Ring,20,01,Ted,55,11192
+The Fellowship Of The Ring,20,01,Voice Of Sauron,7,11192
+The Fellowship Of The Ring,20,01,Voice Of The Ring,34,11192
+The Return Of The King,20,03,Aragorn,580,8681
+The Return Of The King,20,03,Arwen,115,8681
+The Return Of The King,20,03,Bilbo,56,8681
+The Return Of The King,20,03,Boson,7,8681
+The Return Of The King,20,03,Damrod,4,8681
+The Return Of The King,20,03,Deagol,13,8681
+The Return Of The King,20,03,Denethor,560,8681
+The Return Of The King,20,03,Elrond,240,8681
+The Return Of The King,20,03,Eomer,166,8681
+The Return Of The King,20,03,Eowyn,268,8681
+The Return Of The King,20,03,Faramir,337,8681
+The Return Of The King,20,03,Figwit,7,8681
+The Return Of The King,20,03,Frodo,650,8681
+The Return Of The King,20,03,Galadriel,68,8681
+The Return Of The King,20,03,Gamling,22,8681
+The Return Of The King,20,03,Gandalf,1504,8681
+The Return Of The King,20,03,Gimli,313,8681
+The Return Of The King,20,03,Gondor Man,81,8681
+The Return Of The King,20,03,Gothmog,93,8681
+The Return Of The King,20,03,Grima Wormtongue,2,8681
+The Return Of The King,20,03,Grimhold,9,8681
+The Return Of The King,20,03,Grobag,23,8681
+The Return Of The King,20,03,Hobbits,4,8681
+The Return Of The King,20,03,Irolas,20,8681
+The Return Of The King,20,03,Legolas,263,8681
+The Return Of The King,20,03,Madril,36,8681
+The Return Of The King,20,03,Mercenary,6,8681
+The Return Of The King,20,03,Merry,398,8681
+The Return Of The King,20,03,Mouth Of Sauron,87,8681
+The Return Of The King,20,03,Orc,173,8681
+The Return Of The King,20,03,Pippin,628,8681
+The Return Of The King,20,03,Rohan Warrior,64,8681
+The Return Of The King,20,03,Rosie,2,8681
+The Return Of The King,20,03,Sam,924,8681
+The Return Of The King,20,03,Saruman,301,8681
+The Return Of The King,20,03,Shagrat,90,8681
+The Return Of The King,20,03,Theoden,565,8681
+The Return Of The King,20,03,Voice Of Sauron,2,8681
+The Two Towers,20,02,Aragorn,822,9321
+The Two Towers,20,02,Arwen,141,9321
+The Two Towers,20,02,Boromir,134,9321
+The Two Towers,20,02,Crowd,6,9321
+The Two Towers,20,02,Denethor,250,9321
+The Two Towers,20,02,Elrond,243,9321
+The Two Towers,20,02,Eomer,273,9321
+The Two Towers,20,02,Eothain,2,9321
+The Two Towers,20,02,Eowyn,349,9321
+The Two Towers,20,02,Faramir,489,9321
+The Two Towers,20,02,Freda,28,9321
+The Two Towers,20,02,Frodo,664,9321
+The Two Towers,20,02,Galadriel,190,9321
+The Two Towers,20,02,Gamling,85,9321
+The Two Towers,20,02,Gandalf,964,9321
+The Two Towers,20,02,Gimli,521,9321
+The Two Towers,20,02,Gondor Man,127,9321
+The Two Towers,20,02,Grima Wormtongue,416,9321
+The Two Towers,20,02,Grishnakh,72,9321
+The Two Towers,20,02,Haldir,37,9321
+The Two Towers,20,02,Haleth,23,9321
+The Two Towers,20,02,Hama,53,9321
+The Two Towers,20,02,Legolas,233,9321
+The Two Towers,20,02,Mauhur,2,9321
+The Two Towers,20,02,Merry,396,9321
+The Two Towers,20,02,Morwen,39,9321
+The Two Towers,20,02,Orc,49,9321
+The Two Towers,20,02,Pippin,359,9321
+The Two Towers,20,02,Rohan Maiden,24,9321
+The Two Towers,20,02,Rohan Warrior,97,9321
+The Two Towers,20,02,Sam,1044,9321
+The Two Towers,20,02,Saruman,309,9321
+The Two Towers,20,02,Snaga,10,9321
+The Two Towers,20,02,Theoden,762,9321
+The Two Towers,20,02,Ugluk,84,9321
+The Two Towers,20,02,Uruk-hai,13,9321
+The Two Towers,20,02,Wild Man,11,9321
