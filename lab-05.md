@@ -70,7 +70,7 @@ that visualizes the counts for the each income bracket.**
 
 I picked Buddhists and made this plot. Can you make a similar plot?
 
-<img src="/Users/wmh/Documents/Documents - William’s MacBook Air/class/r/psyc-7v08/working/labs/lab-05/budhist-income.png" width="2099" />
+<img src="/Users/wmh/Documents/Documents - William’s MacBook Air/class/r/psyc-7v08/budhist-income.png" width="2099" />
 
 **Next, find out which religion has the highest count in the top income
 bracket.**
@@ -91,7 +91,7 @@ the largest difference between income and rent?**
 90% margin of error in the plot. Here’s one I made earlier. Can you make
 something similar?**
 
-<img src="/Users/wmh/Documents/Documents - William’s MacBook Air/class/r/psyc-7v08/working/labs/lab-05/state-income.png" width="2487" />
+<img src="/Users/wmh/Documents/Documents - William’s MacBook Air/class/r/psyc-7v08/state-income.png" width="2487" />
 
 ## Relational data
 
