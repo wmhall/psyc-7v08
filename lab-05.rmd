@@ -33,7 +33,7 @@ I picked Buddhists and made this plot. Can you make a similar plot?
 
 
 ```{r, echo = FALSE}
-knitr::include_graphics(here::here("budhist-income.png"))
+knitr::include_graphics("budhist-income.png")
 ```
 
 **Next, find out which religion has the highest count in the top income bracket.**
@@ -50,7 +50,7 @@ To see the data type `us_rent_income`. To learn more about the package, type `?u
 
 
 ```{r, echo = FALSE}
-knitr::include_graphics(here::here("state-income.png"))
+knitr::include_graphics("state-income.png")
 
 ```
 
