@@ -32,6 +32,7 @@ data_df %>%
 													 name == "q1" & value == "Disagree" ~ 2,
 													 name == "q1" & value == "Strongly Disagree" ~ 1, 
 													 name == "q2" & value == "yes" ~ 1, 
-													 name == "q2" & value == "no" ~ 0))
+													 name == "q2" & value == "no" ~ 0)) %>% 
+	pivot_wider(names_from = name, values_from = value)
 ```
 
