@@ -1,0 +1,35 @@
+library(tidyverse)
+
+q1_coding_df <- 
+	tibble(q = c("Strongly Agree", 
+								"Agree",
+								"Undecided",
+								"Disagree",
+								"Strongly Disagree"), 
+				 q_num = 5:1)
+
+q2_coding_df <- 
+	tibble(q = c("yes", "no"), 
+				 q_num = c(0, 1))
+
+coding_df <- 
+	bind_rows(q1 = q1_coding_df, q2 = q2_coding_df, .id = "name") %>% 
+	rename(value = q)
+
+data_df <- 
+	tibble(ps_id = 1:15, 
+				 q1 = sample(c("Strongly Agree", 
+				 							"Agree",
+				 							"Undecided",
+				 							"Disagree",
+				 							"Strongly Disagree"), 1, size = 15), 
+				 q2 = sample(c("yes", "no"), 1, size =15))
+
+
+data_df %>% 
+	pivot_longer(-ps_id) %>% 
+	left_join(coding_df) %>% 
+	select(-value) %>% 
+	pivot_wider(names_from = name, values_from = q_num)
+
+
