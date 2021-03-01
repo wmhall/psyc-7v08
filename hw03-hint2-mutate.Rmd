@@ -1,8 +1,8 @@
 ---
-title: "hw03-hint"
+title: "hw03-hint2-mutate"
 author: "Will Hall"
 date: "01/03/2021"
-output:
+output: 
   github_document:
     df_print: kable
 ---
@@ -11,25 +11,8 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-
 ```{r}
 library(tidyverse)
-
-q1_coding_df <- 
-	tibble(q = c("Strongly Agree", 
-								"Agree",
-								"Undecided",
-								"Disagree",
-								"Strongly Disagree"), 
-				 q_num = 5:1)
-
-q2_coding_df <- 
-	tibble(q = c("yes", "no"), 
-				 q_num = c(0, 1))
-
-coding_df <- 
-	bind_rows(q1 = q1_coding_df, q2 = q2_coding_df, .id = "name") %>% 
-	rename(value = q)
 
 data_df <- 
 	tibble(ps_id = 1:15, 
@@ -43,8 +26,12 @@ data_df <-
 
 data_df %>% 
 	pivot_longer(-ps_id) %>% 
-	left_join(coding_df) %>% 
-	select(-value) %>% 
-	pivot_wider(names_from = name, values_from = q_num)
+	mutate(value = case_when(name == "q1" & value == "Strongly Agree" ~ 5, 
+													 name == "q1" & value == "Agree" ~ 4, 
+													 name == "q1" & value == "Undecided" ~ 3,
+													 name == "q1" & value == "Disagree" ~ 2,
+													 name == "q1" & value == "Strongly Disagree" ~ 1, 
+													 name == "q2" & value == "yes" ~ 1, 
+													 name == "q2" & value == "no" ~ 0))
 ```
 
