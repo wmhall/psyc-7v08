@@ -1,0 +1,89 @@
+---
+title: "Homework 4"
+output: 
+ github_document:
+  toc: TRUE
+  df_print: kable
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(broom)
+```
+
+### Overview
+
+The goal of homework 4 is to learn more about `map` functions from the `purrr` package.
+
+### `Purrr`'s `map()` functions  
+
+`Purrr` provides a set  of `map` functions (`map()`, `map_lgl()`, `map_chr()`, `map_int()`, `map_dbl()`, `map_raw()`, `map_df()`, `map_dfr()`, `map_dfc()`,  `walk()`) that allow you to apply a function to each element of a list or simple vector. 
+
+These functions can be used to solve a variety of problems that require iteration. 
+
+For example, below, I use `map()` to compute the correlation between the `mpg` variable and all the other variables in the `mtcars` dataset. 
+
+```{r}
+mtcars %>% 
+	map(~cor.test(., mtcars$mpg)) %>% 
+	map_df(tidy) %>% 
+	mutate(name = names(mtcars))
+```
+
+### Your mission, high-level
+
+Write a tutorial demonstrating  **two** different `map` functions. Use the `map` functions to solve a problem that interests you. 
+
+Your tutorial should teach someone how to use your chosen `map()` functions. You can assume that person is in our course and knows as much *R* as we've covered thus far.
+
+### The specifics
+
+Teach someone how to use **two** of these functions: `map()`, `map_lgl()`, `map_chr()`, `map_int()`, `map_dbl()`, `map_raw()`, `map_dfr()`, `map_dfc()`, `map_if()`, `map_at()`,  `walk()`.
+
+You will teach these `map` functions by demonstrating how they can be used to solve a problem. You get to pick the problem and the data you use. You can pick separate problems (one per `map` function) or could use two `map` functions in concert to solve a single problem (like I did above). 
+
+Walk your reader through how the map function works. Take a look at the [RStudio primer](https://rstudio.cloud/learn/primers) on iteration if you need help explaining how to use the map functions. 
+
+Compare the two `map` functions and describe when one type of `map` might be more useful than the other, and vice versa. 
+
+### I want to do more!
+
+`Purrr` has several advanced `map` functions (e.g., `map2()`, `pmap()`, `pwalk()`) that allow you to solve increasingly complex iteration problems. Pick one of these functions and demonstrate how it works. 
+
+### What should I do?
+
+#### Picking data
+
+Remember that all data frames are lists, so you can use `map` to apply functions to any data frame we've covered in the course or a data set of your choosing. When mapping functions to data frames, you'll need to consider the data type of the columns. If you `map` `mean()` to a data frame of character vectors, you aren't going to have a happy time.
+
+Your tutorial doesn't need to focus on data frames. For example, you might want to iterate over a vector of characters or numbers. 
+
+#### Picking a problem
+
+Try to make the tutorial useful for future you. What type of tasks do you commonly do in your research? Could they be streamlined with `purrr`?
+
+At the end of the class on `purrr`, I showed you a few different ideas for problems you could solve with `purrr`, feel free to use those as inspiration. 
+
+You might take a look at the [RStudio primer](https://rstudio.cloud/learn/primers) on iteration for ideas of problems to solve.
+
+Finally, the problem you pick doesn't need to be complex. You simply need something that allows you to demonstrate your understanding of the `map` functions.
+
+#### Ask for help
+
+If you have trouble with this homework, please email me to ask for advice.
+
+### Report your process
+
+You're encouraged to reflect on what was hard/easy, problems you solved, helpful tutorials you read, etc. Give credit to your sources, whether it's a blog post, a fellow student, an online tutorial, etc.
+
+### Rubric
+
+As always, refer to the [general rubric](general-rubric.md) for guidelines on how we'll be grading.
+
+Check minus: Reproduced something we covered in class or a very modest extension. The tutorial is difficult to understand. There is no obvious effort to explore the differences between the two `map()` functions you cover. Or more than one technical problem that is relatively easy to fix. It's hard to find the report in your Rproject folder
+
+Check: Hits all the elements. No obvious mistakes. Pleasant to read. No heroic detective work is required. Solid.
+
+Check plus: Exceeded the requirements in a number of tasks. Or developed novel approaches that were indeed interesting and "worked". Impressive use of `purrr` to meet the goals of the assignment. Thoughtful application of the `map` functions to solving your chosen problem. Impeccable organization of your report. We learned something new from reviewing your work and are eager to incorporate it into our work.
+

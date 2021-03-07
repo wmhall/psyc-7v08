@@ -1,0 +1,68 @@
+---
+title: "Lab 07"
+output:
+  github_document:
+    toc: true
+    toc_depth: 4
+    df_print: kable
+---
+
+```{r setup, include = FALSE, cache = FALSE}
+knitr::opts_chunk$set(error = TRUE)
+library(tidyverse)
+```
+
+### Fit a linear model
+
+Using the `gapminder` dataset, fit a linear model (`lm`) in which you predict `lifeExp` from `year`. 
+
+Once you've fit your model, explore the various tidiers from the `broom` package. You should be able to explain how  `tidy()`, `glance()`, and `augment()` differ from one another in the types of things they tell you about your model.  
+
+### Fit many linear models
+
+Using the approach I described in the lecture, fit a linear model predicting `lifeExp` from `year` for each country in the `gapminder` dataset.
+
+Tidy the model outputs using functions from `broom`. Use your `dplyr` skills to sort through the parameter estimates. `filter()` and `arrange()` will be helpful here. You should be able to do things like find countries where there is a non-significant relationship between `year` and `lifeExp`.
+
+Can you create a useful plot of the parameter estimates? This might be challenging if you try and do it for every country so maybe select a subset and then visualize using `ggplot`. 
+
+### Explore the models
+
+#### Find poorly fitting models
+
+Identify poorly fitting models by looking at the various fit statistics you can extract with the `broom` package. 
+
+For example, here are the fit statistic for the first 10 countries when you fit a linear model predicting `lifeExp` from `year`. Can you produce something similar and then use your `dplyr` skills to isolate the poorly fitting models (e.g., a low R-squared).  
+
+```{r, echo = FALSE}
+read_rds(here::here("rsq.rds")) %>% 
+  select(-data, -fm, -tidy_fit_obs, -tidied) %>% 
+  head(10) 
+```
+
+Once you've found a few poorly fitting models, visualize the data associated with those countries so that you can see why a linear model might not be appropriate. 
+
+Here is an idea of how you might do that. I'm using a line plot to show the differences in the data from countries with high vs low R-squared. Can you make something similar?
+
+```{r, echo=FALSE}
+knitr::include_graphics("line-plot.png")
+```
+
+#### Exploring residuals
+
+Compare the residuals (extracted via `augment()`) for models with a high R-squared vs a low R-squared. What do you find? Is there a plot you can create to show the differences?
+
+In the plot below, I visualize the residuals from 5 countries (the same countries from the plot above) where the R-squared is high (vs. low). Look at how the residuals balloon in the models that struggle to account for the underlying data. Can you make something similar? 
+
+```{r, echo = FALSE}
+knitr::include_graphics("residual-plot.png")
+```
+
+### I want to do more!
+
+Find other creative and helpful ways to explore and visualize the 142 models you fit. 
+
+Start working on [hw04](hw04.md).
+
+
+
