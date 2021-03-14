@@ -64,5 +64,3 @@ Find other creative and helpful ways to explore and visualize the 142 models you
 
 Start working on [hw04](hw04.md).
 
-
-
